@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {"doc_id": "DL-2025", "title": "RBI (Digital Lending) Directions, 2025 (RBI/2025-26/36)", "domain": "digital_lending", "doc_type": "master_direction", "issue_date": "2025-05-08", "effective_date": "2025-05-08", "status": "in_force", "repeal_date": null, "applies_to": "Regulated entities", "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12848", "file_path": "data/raw/DL-2025.pdf"},
+    {"doc_id": "DL-2022", "title": "Guidelines on Digital Lending, 2 Sept 2022", "domain": "digital_lending", "doc_type": "guideline", "issue_date": "2022-09-02", "effective_date": "2022-09-02", "status": "repealed", "repeal_date": "2025-05-08", "applies_to": "Banks, NBFCs", "source_url": null, "file_path": "data/raw/DL-2022.pdf"},
+    {"doc_id": "DLG-2023", "title": "Guidelines on Default Loss Guarantee (DLG) in Digital Lending", "domain": "digital_lending", "doc_type": "guideline", "issue_date": "2023-06-08", "effective_date": "2023-06-08", "status": "repealed", "repeal_date": "2025-05-08", "applies_to": "Regulated entities", "source_url": null, "file_path": "data/raw/DLG-2023.pdf"},
+    {"doc_id": "PA-2025", "title": "RBI (Regulation of Payment Aggregators) Directions, 2025", "domain": "payment_aggregator", "doc_type": "master_direction", "issue_date": "2025-09-15", "effective_date": "2025-09-15", "status": "in_force", "repeal_date": null, "applies_to": "Payment aggregators", "source_url": "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=12896", "file_path": "data/raw/PA-2025.pdf"},
+    {"doc_id": "PA-2020", "title": "Guidelines on Regulation of Payment Aggregators and Payment Gateways, 17 Mar 2020", "domain": "payment_aggregator", "doc_type": "guideline", "issue_date": "2020-03-17", "effective_date": "2020-03-17", "status": "repealed", "repeal_date": "2025-09-15", "applies_to": "Payment aggregators", "source_url": null, "file_path": "data/raw/PA-2020.pdf"},
+    {"doc_id": "PA-2021", "title": "Guidelines on Regulation of Payment Aggregators and Payment Gateways, 31 Mar 2021", "domain": "payment_aggregator", "doc_type": "circular", "issue_date": "2021-03-31", "effective_date": "2021-03-31", "status": "repealed", "repeal_date": "2025-09-15", "applies_to": "Payment aggregators", "source_url": null, "file_path": "data/raw/PA-2021.pdf"},
+    {"doc_id": "KYC-2025", "title": "RBI (Commercial Banks - Know Your Customer) Directions, 2025", "domain": "kyc", "doc_type": "master_direction", "issue_date": "2025-11-28", "effective_date": "2025-11-28", "status": "in_force", "repeal_date": null, "applies_to": "Commercial banks; read into PA and PPI instructions", "source_url": null, "file_path": "data/raw/KYC-2025.pdf"},
+    {"doc_id": "KYC-2016", "title": "Master Direction - Know Your Customer (KYC) Direction, 2016", "domain": "kyc", "doc_type": "master_direction", "issue_date": "2016-02-25", "effective_date": "2016-02-25", "status": "repealed", "repeal_date": "2025-11-28", "applies_to": "Regulated entities", "source_url": null, "file_path": "data/raw/KYC-2016.pdf"}
+  ],
+  "relations": [
+    {"new_doc_id": "DL-2025", "old_doc_id": "DL-2022", "relation_type": "supersedes", "note": "Repealed by DL Directions 2025"},
+    {"new_doc_id": "DL-2025", "old_doc_id": "DLG-2023", "relation_type": "supersedes", "note": "DLG guidelines repealed by DL Directions 2025"},
+    {"new_doc_id": "PA-2025", "old_doc_id": "PA-2020", "relation_type": "supersedes", "note": "Repealed by PA Directions 2025"},
+    {"new_doc_id": "PA-2025", "old_doc_id": "PA-2021", "relation_type": "supersedes", "note": "Repealed by PA Directions 2025"},
+    {"new_doc_id": "PA-2021", "old_doc_id": "PA-2020", "relation_type": "amends", "note": "VERIFY: how the 2021 guidelines relate to 2020"},
+    {"new_doc_id": "KYC-2025", "old_doc_id": "KYC-2016", "relation_type": "supersedes", "note": "KYC MD 2016 repealed 28 Nov 2025"},
+    {"new_doc_id": "PA-2025", "old_doc_id": "KYC-2016", "relation_type": "refers_to", "note": "PA text cites KYC MD 2016; read as KYC 2025 per the Nov 2025 notification"}
+  ]
+}
