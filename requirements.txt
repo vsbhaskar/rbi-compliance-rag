@@ -1,0 +1,11 @@
+langchain
+langgraph
+langchain-community
+chromadb
+rank_bm25
+sqlalchemy
+pymysql
+cryptography
+python-dotenv
+pydantic
+pymupdf
