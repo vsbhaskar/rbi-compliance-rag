@@ -2,6 +2,7 @@ import re
 
 PARA_RE = re.compile(r"^\s*(\d{1,3})\.\s+\S")
 HEADING_RE = re.compile(r"^\s*(chapter|annex|annexure|section|part)\b", re.I)
+ANNEX_RE = re.compile(r"^\s*annex", re.I)
 
 
 def clean(text: str) -> str:
@@ -11,9 +12,9 @@ def clean(text: str) -> str:
 def chunk_blocks(doc_id: str, blocks, max_chars=1200, min_chars=400):
     chunks = []
     buf, buf_len = [], 0
-    start_page, para_no, section = None, None, None
+    start_page, section = None, None
     chunk_section, chunk_para = None, None
-    last_para = None
+    last_para, last_n = None, 0
 
     def flush():
         nonlocal buf, buf_len, start_page, chunk_para, chunk_section
@@ -39,10 +40,16 @@ def chunk_blocks(doc_id: str, blocks, max_chars=1200, min_chars=400):
 
         if HEADING_RE.match(text) and len(text) < 120:
             section = text
+            if ANNEX_RE.match(text):
+                last_n = 0  # annexures restart their numbering
 
         m = PARA_RE.match(text)
         if m:
-            last_para = m.group(1)
+            n = int(m.group(1))
+            if last_n < n <= last_n + 3:   # only accept forward-moving numbers
+                last_n, last_para = n, str(n)
+            else:
+                m = None                   # sub-item like "2." inside a definition
 
         too_big = buf_len > 0 and buf_len + len(text) > max_chars
         new_para = bool(m) and buf_len >= min_chars

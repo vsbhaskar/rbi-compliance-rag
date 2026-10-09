@@ -9,3 +9,5 @@ cryptography
 python-dotenv
 pydantic
 pymupdf
+langchain-google-genai
+sentence-transformers
