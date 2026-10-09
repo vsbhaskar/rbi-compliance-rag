@@ -22,3 +22,15 @@ CREATE TABLE IF NOT EXISTS document_relations (
     FOREIGN KEY (new_doc_id) REFERENCES documents(doc_id),
     FOREIGN KEY (old_doc_id) REFERENCES documents(doc_id)
 );
+
+CREATE TABLE IF NOT EXISTS chunks (
+    chunk_id      VARCHAR(120) PRIMARY KEY,
+    doc_id        VARCHAR(100) NOT NULL,
+    chunk_index   INT NOT NULL,
+    page_start    INT NOT NULL,
+    para_no       VARCHAR(20) NULL,
+    section_title VARCHAR(300) NULL,
+    content       MEDIUMTEXT NOT NULL,
+    char_count    INT NOT NULL,
+    FOREIGN KEY (doc_id) REFERENCES documents(doc_id)
+);
